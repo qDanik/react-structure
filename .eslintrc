@@ -1,0 +1,77 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [ "react" ],
+  "extends": [ "eslint:recommended", "plugin:react/recommended", "airbnb" ],
+  "settings": {
+    "import/resolver": {
+      "webpack": "webpack.config.js"
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "globals": {
+    "VK": true,
+    "API_URL": true,
+    "DEVELOPMENT": true,
+    "jest": true,
+    "shallow": true,
+    "render": true,
+    "mount": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "legacyDecorators": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "rules": {
+    "prefer-const": "error",
+    "no-console": "error",
+    "no-param-reassign": "off",
+    "no-plusplus": "off",
+    "no-unused-expressions": "off",
+    "no-useless-constructor": "off",
+    "max-len": "off",
+    "react/jsx-uses-vars": "error",
+    "require-await": "error",
+    "linebreak-style": "off",
+    "react/jsx-filename-extension": "off",
+    "no-underscore-dangle": "off",
+    "import/prefer-default-export": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "no-sequences": "off",
+    "no-bitwise": "off",
+    "one-var": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/destructuring-assignment": ["off", "always"],
+    "react/require-default-props": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/forbid-prop-types": [ 2, { "forbid": [ "any" ] } ],
+    "react/prop-types": "warn",
+    "react/no-unused-prop-types": "warn",
+    "react/prefer-stateless-function": "off",
+    "object-curly-newline": ["error", {
+      "ObjectExpression": { "multiline": true, "minProperties": 5 },
+      "ObjectPattern": { "multiline": true, "minProperties": 4 },
+      "ImportDeclaration": { "multiline": true, "minProperties": 5 },
+      "ExportDeclaration": { "multiline": true, "minProperties": 4 }
+    }],
+    "require-jsdoc": [  "error", {
+      "require": {
+        "FunctionDeclaration": true,
+        "MethodDefinition": false,
+        "ClassDeclaration": false,
+        "ArrowFunctionExpression": false,
+        "FunctionExpression": false
+      }
+    }
+    ]
+  }
+}

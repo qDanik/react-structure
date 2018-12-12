@@ -1,0 +1,21 @@
+{
+  "short_name": "React App",
+  "name": "React App",
+  "icons": [
+    {
+      "src": "/manifest/logo-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/manifest/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/?utm_source=manifest&utm_campaign=google&utm_content=site&utm_medium=manifest",
+  "background_color": "#272039",
+  "theme_color": "#211B31",
+  "display": "standalone",
+  "scope": "/"
+}
