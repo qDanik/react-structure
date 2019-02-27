@@ -14,4 +14,4 @@ module.exports = merge({
   externals: [
     { External: ['window', 'VK'] },
   ],
-}, styles, resolve, html, devServer, copy(true), /* analyzer, */ defines(true));
+}, styles, resolve, html, devServer, copy(true), /*analyzer,*/ defines(true));

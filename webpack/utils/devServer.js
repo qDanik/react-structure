@@ -7,6 +7,9 @@ const PROXY_STATUS = false; // true for enable proxy
 const PROXY_CONTEXT = ['/api'];
 const PROXY_TARGET = 'https://example.com';
 const PROXY_REWRITE = { };
+// const PROXY_CONTEXT = ['/api'];
+// const PROXY_TARGET = 'https://d.myscore.com.ua/';
+// const PROXY_REWRITE = { '^/api': '' };
 
 let devServer = {
   hot: true,

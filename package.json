@@ -20,6 +20,7 @@
   "dependencies": {
     "@babel/runtime": "^7.2.0",
     "@loadable/component": "^5.2.1",
+    "@rematch/core": "^1.0.6",
     "base-64": "^0.1.0",
     "connected-react-router": "^5.0.1",
     "crypto-js": "^3.1.9-1",
@@ -39,10 +40,10 @@
     "react-responsive": "^6.0.1",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",
-    "redux": "^4.0.1",
     "redux-actions": "^2.6.4",
     "redux-modal": "^2.0.4",
     "redux-thunk": "^2.3.0",
+    "rematch-model": "^0.1.7",
     "reselect": "^4.0.0",
     "styled-components": "^4.1.2",
     "validator": "^10.9.0"
@@ -50,6 +51,7 @@
   "devDependencies": {
     "@babel/core": "^7.2.0",
     "@babel/plugin-proposal-class-properties": "^7.2.1",
+    "@babel/plugin-proposal-decorators": "^7.3.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.2.0",
@@ -63,6 +65,7 @@
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "clean-webpack-plugin": "1.0.0",
+    "compression-webpack-plugin": "^2.0.0",
     "copy-webpack-plugin": "^4.6.0",
     "dotenv-webpack": "^1.5.7",
     "enzyme": "^3.7.0",

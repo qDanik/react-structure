@@ -1,8 +1,7 @@
-import { IMG } from 'components/common/img/index';
+import { IMG } from 'components/common/img';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { changeName } from 'store/actions/init';
 import styled from 'styled-components';
 import LogoImage from 'assets/image/logo.svg';
 
@@ -50,4 +49,4 @@ class DesktopIndex extends Component {
   }
 }
 
-export default connect(state => ({ name: state.init.name }), { rename: changeName })(DesktopIndex);
+export default connect(state => ({ name: state.init.name }), ({ init: { changeName } }) => ({ rename: changeName }))(DesktopIndex);

@@ -15,4 +15,4 @@ module.exports = merge({
   plugins: [
     new CleanWebpackPlugin(['**/*.*'], { root: path.resolve('./public') }),
   ],
-}, styles, resolve, uglify, html, copy(), /* analyzer, */ defines(false));
+}, styles, resolve, uglify, html, copy(), /*analyzer,*/ defines(false));

@@ -3,11 +3,22 @@ const DotEnv = require('dotenv-webpack');
 
 module.exports = {
   entry: { main: './src/index.js' },
+  node: {
+    fs: 'empty',
+    net: 'empty',
+  },
   output: {
     pathinfo: true,
     path: resolve('./public'),
     publicPath: '/',
-    filename: chunkData => (chunkData.chunk.name === 'serviceWorker' ? '[name].js' : 'js/[name].[hash:6].js'),
+    filename: (chunkData) => {
+      switch (chunkData.chunk.name) {
+        case 'serviceWorker':
+          return '[name].js';
+        default:
+          return 'js/[name].[hash:6].js';
+      }
+    },
     chunkFilename: 'js/[name].[hash:6].js',
     globalObject: 'this',
   },
@@ -23,12 +34,11 @@ module.exports = {
       cacheGroups: {
         default: false,
         vendors: false,
-
         vendor: {
           name: 'vendor',
-          chunks: 'all',
+          chunks: 'initial',
           test: /node_modules/,
-          priority: 20,
+          priority: 10,
         },
         common: {
           name: 'common',

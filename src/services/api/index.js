@@ -1,4 +1,4 @@
-import { Url } from 'Service';
+import { Url } from 'lib/Service/index';
 
 window.urls = {
   news: {

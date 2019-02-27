@@ -1,21 +1,29 @@
+import { init } from '@rematch/core';
 import thunk from 'redux-thunk';
-import { createStore, applyMiddleware, compose } from 'redux';
-import { routerMiddleware } from 'connected-react-router';
-import { composeWithDevTools } from 'redux-devtools-extension';
-
-import createReducers from './reducers';
+import { connectRouter, routerMiddleware } from 'connected-react-router';
+import * as models from './models';
 
 /**
  * Store configure
  * @param di
- * @returns {Store<*, Action> & {dispatch: any}}
+ * @returns {RematchStore<Models>}
  */
 export default function configureStore(di = null) {
-  const reducers = createReducers(di.browserHistory);
-  const middleware = compose(applyMiddleware(thunk.withExtraArgument(di), routerMiddleware(di.browserHistory)));
+  const config = {
+    models,
+    redux: {
+      devtoolOptions: { disabled: true },
+      reducers: { router: connectRouter(di.browserHistory) },
+      middlewares: [routerMiddleware(di.browserHistory), thunk.withExtraArgument(di)],
+    },
+  };
 
   if (DEVELOPMENT) {
-    return createStore(reducers, composeWithDevTools(middleware));
+    return init({
+      ...config,
+      redux: { ...config.redux, devtoolOptions: { disabled: false } },
+    });
   }
-  return createStore(reducers, middleware);
+
+  return init(config);
 }

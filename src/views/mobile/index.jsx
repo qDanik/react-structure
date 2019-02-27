@@ -1,8 +1,7 @@
-import { IMG } from 'components/common/img/index';
+import { IMG } from 'components/common/img';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { changeName } from 'store/actions/init';
 import styled from 'styled-components';
 import LogoImage from 'assets/image/logo.svg';
 
@@ -31,11 +30,11 @@ const Logo = styled(IMG)`
 class DesktopIndex extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
-    rename: PropTypes.func.isRequired,
+    changeName: PropTypes.func.isRequired,
   };
 
   handleChangeName = ({ target }) => {
-    this.props.rename(target.value);
+    this.props.changeName(target.value);
   };
 
   render() {
@@ -50,4 +49,7 @@ class DesktopIndex extends Component {
   }
 }
 
-export default connect(state => ({ name: state.init.name }), { rename: changeName })(DesktopIndex);
+export default connect(
+  ({ init }) => ({ name: init.name }),
+  ({ init: { changeName } }) => ({ changeName }),
+)(DesktopIndex);
